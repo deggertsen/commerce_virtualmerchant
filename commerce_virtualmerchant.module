@@ -437,11 +437,11 @@ function commerce_virtualmerchant_submit_form_submit($payment_method, $pane_form
   }
 
   // Store the type of transaction in the remote status.
-  $transaction->remote_status = $response['ssl_transaction_type'];
+  $transaction->remote_status = commerce_virtualmerchant_txn_type($txn_type);
 
   // Build a meaningful response message.
   $message = array(
-    '<b>' . commerce_virtualmerchant_reverse_txn_type($response['ssl_transaction_type']) . '</b>',
+    '<b>' . commerce_virtualmerchant_txn_type($txn_type) . '</b>',
     '<b>' . ($response['ssl_result'] != '0' ? t('REJECTED') : t('ACCEPTED')) . ':</b> ' . check_plain($response['ssl_result_message']),
     t('AVS response: @avs', array('@avs' => commerce_virtualmerchant_avs_response($response['ssl_avs_response']))),
   );

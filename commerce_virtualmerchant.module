@@ -196,7 +196,7 @@ function commerce_virtualmerchant_settings_form($settings = NULL) {
 
   $form['virtualmerchant_merchant_id'] = array(
     '#type' => 'textfield',
-    '#title' => t('Virtual Merchant Mercahnt ID'),
+    '#title' => t('Virtual Merchant Merchant ID'),
     '#description' => t('Your merchant ID is the Account number you use to login at Virtual Merchant.'),
     '#default_value' => $settings['virtualmerchant_merchant_id'],
     '#required' => TRUE,
@@ -485,7 +485,7 @@ function commerce_virtualmerchant_form_commerce_payment_order_transaction_add_fo
 }
 
 /**
- * Submits a transaction request to Virtual Mercahnt.
+ * Submits a transaction request to Virtual Merchant.
  *
  * @param $payment_method
  *   The payment method instance array associated with this API request.
